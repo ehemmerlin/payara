@@ -6,6 +6,11 @@ RUN \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 
+COPY bankFacade-ejb-client.jar /opt/payara41/glassfish/domains/domain1/autodeploy/
+COPY bankFacade-ejb.jar /opt/payara41/glassfish/domains/domain1/autodeploy/
+COPY bankFacade-war.war /opt/payara41/glassfish/domains/domain1/autodeploy/
+COPY webStore.war /opt/payara41/glassfish/domains/domain1/autodeploy/
+
 USER payara
 RUN curl -o /opt/payara41/glassfish/domains/domain1/lib/ext/mysql-connector-java-5.1.46.jar https://repo1.maven.org/maven2/mysql/mysql-connector-java/5.1.46/mysql-connector-java-5.1.46.jar
 RUN cp /opt/payara41/glassfish/domains/domain1/lib/ext/mysql-connector-java-5.1.46.jar /opt/payara41/glassfish/lib/
