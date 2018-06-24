@@ -2,6 +2,7 @@ version: '3.3'
 services:
     payara-full:
         build: mypayara-full
+        image: ehemmerlin/payara-full
         ports:
             - "8080:8080"
             - "4848:4848"
