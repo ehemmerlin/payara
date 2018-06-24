@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        docker { image 'ehemmerlin:payara-full' }
+        docker { image 'ehemmerlin/payara-full' }
     }
     stages {
         stage('Test') {
